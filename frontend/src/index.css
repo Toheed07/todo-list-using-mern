@@ -1,0 +1,208 @@
+:root {
+  --primary: #4a4a4a;
+  --secondary: #ff8c00;
+  --tertiary: #ffffff;
+  --quaternary: #1e1e1e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: var(--quaternary);
+  color: var(--primary);
+}
+
+.App {
+  padding: 32px;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+h4 {
+  font-size: 18px;
+  color: var(--secondary);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.todo {
+  position: relative;
+  background-color: var(--tertiary);
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  transition: 0.2s;
+  cursor: pointer;
+  margin-bottom: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo:hover {
+  background-color: #f1f1f1;
+}
+
+.todo .checkbox {
+  width: 20px;
+  height: 20px;
+  margin-right: 16px;
+  border-radius: 50%;
+  background-color: var(--tertiary);
+  transition: 0.2s;
+  border: 2px solid var(--primary);
+}
+
+.todo.is-complete .checkbox {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.todo .text {
+  font-size: 20px;
+  font-weight: 500;
+  flex: 1;
+  margin-right: 16px;
+}
+
+.todo.is-complete .text {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.todo .delete-todo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 16px;
+  color: var(--primary);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.todo .delete-todo:hover {
+  background-color: #f1f1f1;
+}
+
+.addPopup {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--quaternary);
+  background-color: var(--secondary);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.addPopup:hover {
+  background-color: #ff6a00;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.2);
+}
+
+.closePopup {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
+
+.popup h3 {
+  color: #333;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.popup label {
+  display: block;
+  color: #555;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.popup input[type="text"] {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #dacece;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 24px;
+  box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.1);
+}
+
+.popup button {
+  padding: 16px 32px;
+  border: none;
+  border-radius: 8px;
+  background-color: #D81E5B;
+  background-image: linear-gradient(to right, #D81E5B, #8A4EFC);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.popup button:hover {
+  background-color: #AF1E2D;
+}
+
+.button {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background-color: var(--secondary);
+  display: inline-block;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-top: 16px;
+  text-align: center;
+  cursor: pointer;
+}
