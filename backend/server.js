@@ -59,12 +59,10 @@ app.get('/todo/complete/:id', async (req, res) => {
     const { todos } = req.body;
   
     try {
-      // Update the order of todos in the database
       for (let i = 0; i < todos.length; i++) {
         await Todo.findByIdAndUpdate(todos[i]._id, { order: i });
       }
   
-      // Fetch the updated list of todos
       const updatedTodos = await Todo.find().sort({ order: 1 });
       console.log(updatedTodos)
       res.json(updatedTodos);
